@@ -1,0 +1,22 @@
+vision:
+  includes: 
+  - "./vision/jobs/object-detection-using-built-in-component/"
+  jobs:
+    object-detection-using-built-in-component: 
+      job: "./vision/jobs/object-detection-using-built-in-component/pipeline.yml"
+      pre: "./vision/jobs/object-detection-using-built-in-component/prepare_data.py"
+
+automl_components:
+  includes:
+  - ./automl/tests/
+  jobs:
+    automl_tabular_component_validation:
+      pre: ./automl/tests/preprocessing/automl_preprocessing.py
+      pytest_job: ./automl/tests/test_automl_components.py
+      assets:
+      - ./automl/components/automl_tabular_classification
+      - ./automl/components/automl_tabular_forecasting
+      - ./automl/components/automl_tabular_regression
+      - ./automl/components/automl_text_classification
+      - ./automl/components/automl_text_classification_multilable
+      - ./automl/components/automl_text_ner
