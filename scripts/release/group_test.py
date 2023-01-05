@@ -22,7 +22,7 @@ TEST_YML = "tests.yml"
 def run_pytest_job(job: Path, my_env: dict):
     """Run single pytest job."""
     num_cores = psutil.cpu_count()
-    logger.print("Starting pytest with 4 cores")
+    logger.print(f"Starting pytest with {num_cores} cores")
     p = run(f"pytest {job} -n 4 --log-cli-level=info --show-capture=stderr", env=my_env, shell=True)
     return p.returncode
 
