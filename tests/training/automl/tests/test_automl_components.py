@@ -31,66 +31,66 @@ class TestAutoMLComponents:
     @pytest.mark.parametrize(
         "spec_path, payload_path, data_assets",
         [
-            # # classification
-            # (
-            #     "automl/components/automl_tabular_classification/spec.yaml",
-            #     "automl/tests/test_configs/payload/classification_bankmarketing_payload.json",
-            #     [
-            #         {
-            #             "name": "classification_training_data",
-            #             "path": (
-            #                 "./automl/tests/test_configs/assets/classification-bankmarketing/training-mltable-folder"
-            #             ),
-            #             "type": AssetTypes.MLTABLE,
-            #             "version": "1",
-            #         },
-            #         {
-            #             "name": "classification_validation_data",
-            #             "path": (
-            #                 "./automl/tests/test_configs/assets/classification-bankmarketing/validation-mltable-folder"
-            #             ),
-            #             "type": AssetTypes.MLTABLE,
-            #             "version": "1",
-            #         },
-            #         {
-            #             "name": "classification_test_data",
-            #             "path": "./automl/tests/test_configs/assets/classification-bankmarketing/test-mltable-folder",
-            #             "type": AssetTypes.MLTABLE,
-            #             "version": "1",
-            #         },
-            #     ],
-            # ),
-            # # regression
-            # (
-            #     "automl/components/automl_tabular_regression/spec.yaml",
-            #     "automl/tests/test_configs/payload/regression_hardware_performance_payload.json",
-            #     [
-            #         {
-            #             "name": "regression_training_data",
-            #             "path": (
-            #                 "./automl/tests/test_configs/assets/regression-hardware-performance/"
-            #                 + "training-mltable-folder"
-            #             ),
-            #             "type": AssetTypes.MLTABLE,
-            #             "version": "1",
-            #         }
-            #     ],
-            # ),
-            # # forecasting
-            # (
-            #     "automl/components/automl_tabular_forecasting/spec.yaml",
-            #     "automl/tests/test_configs/payload/forecasting_energy_demand_payload.json",
-            #     [
-            #         {
-            #             "name": "forecasting_training_data",
-            #             "path": (
-            #                 "./automl/tests/test_configs/assets/forecasting-energy-demand/training-mltable-folder"
-            #             ),
-            #             "type": AssetTypes.MLTABLE,
-            #             "version": "1",
-            #         },
-            #     ],
-            # ),
+            # classification
+            (
+                "automl/components/automl_tabular_classification/spec.yaml",
+                "automl/tests/test_configs/payload/classification_bankmarketing_payload.json",
+                [
+                    {
+                        "name": "classification_training_data",
+                        "path": (
+                            "./automl/tests/test_configs/assets/classification-bankmarketing/training-mltable-folder"
+                        ),
+                        "type": AssetTypes.MLTABLE,
+                        "version": "1",
+                    },
+                    {
+                        "name": "classification_validation_data",
+                        "path": (
+                            "./automl/tests/test_configs/assets/classification-bankmarketing/validation-mltable-folder"
+                        ),
+                        "type": AssetTypes.MLTABLE,
+                        "version": "1",
+                    },
+                    {
+                        "name": "classification_test_data",
+                        "path": "./automl/tests/test_configs/assets/classification-bankmarketing/test-mltable-folder",
+                        "type": AssetTypes.MLTABLE,
+                        "version": "1",
+                    },
+                ],
+            ),
+            # regression
+            (
+                "automl/components/automl_tabular_regression/spec.yaml",
+                "automl/tests/test_configs/payload/regression_hardware_performance_payload.json",
+                [
+                    {
+                        "name": "regression_training_data",
+                        "path": (
+                            "./automl/tests/test_configs/assets/regression-hardware-performance/"
+                            + "training-mltable-folder"
+                        ),
+                        "type": AssetTypes.MLTABLE,
+                        "version": "1",
+                    }
+                ],
+            ),
+            # forecasting
+            (
+                "automl/components/automl_tabular_forecasting/spec.yaml",
+                "automl/tests/test_configs/payload/forecasting_energy_demand_payload.json",
+                [
+                    {
+                        "name": "forecasting_training_data",
+                        "path": (
+                            "./automl/tests/test_configs/assets/forecasting-energy-demand/training-mltable-folder"
+                        ),
+                        "type": AssetTypes.MLTABLE,
+                        "version": "1",
+                    },
+                ],
+            ),
             # nlp classification
             (
                 "automl/components/automl_text_classification/spec.yaml",
@@ -160,106 +160,106 @@ class TestAutoMLComponents:
                     },
                 ],
             ),
-            # # image classification
-            # (
-            #     "automl/components/automl_image_classification/spec.yaml",
-            #     "automl/tests/test_configs/payload/image_classification_fridge_items_payload.json",
-            #     [
-            #         {
-            #             "name": "image_classification_training_data",
-            #             "path": (
-            #                 "./automl/tests/test_configs/assets/image-classification-fridge-items/"
-            #                 + "training-mltable-folder"
-            #             ),
-            #             "type": AssetTypes.MLTABLE,
-            #             "version": "1",
-            #         },
-            #         {
-            #             "name": "image_classification_validation_data",
-            #             "path": (
-            #                 "./automl/tests/test_configs/assets/image-classification-fridge-items/"
-            #                 + "validation-mltable-folder"
-            #             ),
-            #             "type": AssetTypes.MLTABLE,
-            #             "version": "1",
-            #         },
-            #     ],
-            # ),
-            # # image classification multilabel
-            # (
-            #     "automl/components/automl_image_classification_multilabel/spec.yaml",
-            #     "automl/tests/test_configs/payload/image_classification_multilabel_fridge_items_payload.json",
-            #     [
-            #         {
-            #             "name": "image_classification_multilabel_training_data",
-            #             "path": (
-            #                 "./automl/tests/test_configs/assets/image-classification-multilabel-fridge-items"
-            #                 + "/training-mltable-folder"
-            #             ),
-            #             "type": AssetTypes.MLTABLE,
-            #             "version": "1",
-            #         },
-            #         {
-            #             "name": "image_classification_multilabel_validation_data",
-            #             "path": (
-            #                 "./automl/tests/test_configs/assets/image-classification-multilabel-fridge-items/"
-            #                 + "validation-mltable-folder"
-            #             ),
-            #             "type": AssetTypes.MLTABLE,
-            #             "version": "1",
-            #         },
-            #     ],
-            # ),
-            # # image object detection
-            # (
-            #     "automl/components/automl_image_object_detection/spec.yaml",
-            #     "automl/tests/test_configs/payload/image_object_detection_fridge_items_payload.json",
-            #     [
-            #         {
-            #             "name": "image_object_detection_training_data",
-            #             "path": (
-            #                 "./automl/tests/test_configs/assets/image-object-detection-fridge-items/"
-            #                 + "training-mltable-folder"
-            #             ),
-            #             "type": AssetTypes.MLTABLE,
-            #             "version": "1",
-            #         },
-            #         {
-            #             "name": "image_object_detection_validation_data",
-            #             "path": (
-            #                 "./automl/tests/test_configs/assets/image-object-detection-fridge-items/"
-            #                 + "validation-mltable-folder"
-            #             ),
-            #             "type": AssetTypes.MLTABLE,
-            #             "version": "1",
-            #         },
-            #     ],
-            # ),
-            # # image instance segmentation
-            # (
-            #     "automl/components/automl_image_instance_segmentation/spec.yaml",
-            #     "automl/tests/test_configs/payload/image_instance_segmentation_fridge_items_payload.json",
-            #     [
-            #         {
-            #             "name": "image_instance_segmentation_training_data",
-            #             "path": (
-            #                 "./automl/tests/test_configs/assets/image-instance-segmentation-fridge-items/"
-            #                 + "training-mltable-folder"
-            #             ),
-            #             "type": AssetTypes.MLTABLE,
-            #             "version": "1",
-            #         },
-            #         {
-            #             "name": "image_instance_segmentation_validation_data",
-            #             "path": (
-            #                 "./automl/tests/test_configs/assets/image-instance-segmentation-fridge-items/"
-            #                 + "validation-mltable-folder"
-            #             ),
-            #             "type": AssetTypes.MLTABLE,
-            #             "version": "1",
-            #         },
-            #     ],
-            # ),
+            # image classification
+            (
+                "automl/components/automl_image_classification/spec.yaml",
+                "automl/tests/test_configs/payload/image_classification_fridge_items_payload.json",
+                [
+                    {
+                        "name": "image_classification_training_data",
+                        "path": (
+                            "./automl/tests/test_configs/assets/image-classification-fridge-items/"
+                            + "training-mltable-folder"
+                        ),
+                        "type": AssetTypes.MLTABLE,
+                        "version": "1",
+                    },
+                    {
+                        "name": "image_classification_validation_data",
+                        "path": (
+                            "./automl/tests/test_configs/assets/image-classification-fridge-items/"
+                            + "validation-mltable-folder"
+                        ),
+                        "type": AssetTypes.MLTABLE,
+                        "version": "1",
+                    },
+                ],
+            ),
+            # image classification multilabel
+            (
+                "automl/components/automl_image_classification_multilabel/spec.yaml",
+                "automl/tests/test_configs/payload/image_classification_multilabel_fridge_items_payload.json",
+                [
+                    {
+                        "name": "image_classification_multilabel_training_data",
+                        "path": (
+                            "./automl/tests/test_configs/assets/image-classification-multilabel-fridge-items"
+                            + "/training-mltable-folder"
+                        ),
+                        "type": AssetTypes.MLTABLE,
+                        "version": "1",
+                    },
+                    {
+                        "name": "image_classification_multilabel_validation_data",
+                        "path": (
+                            "./automl/tests/test_configs/assets/image-classification-multilabel-fridge-items/"
+                            + "validation-mltable-folder"
+                        ),
+                        "type": AssetTypes.MLTABLE,
+                        "version": "1",
+                    },
+                ],
+            ),
+            # image object detection
+            (
+                "automl/components/automl_image_object_detection/spec.yaml",
+                "automl/tests/test_configs/payload/image_object_detection_fridge_items_payload.json",
+                [
+                    {
+                        "name": "image_object_detection_training_data",
+                        "path": (
+                            "./automl/tests/test_configs/assets/image-object-detection-fridge-items/"
+                            + "training-mltable-folder"
+                        ),
+                        "type": AssetTypes.MLTABLE,
+                        "version": "1",
+                    },
+                    {
+                        "name": "image_object_detection_validation_data",
+                        "path": (
+                            "./automl/tests/test_configs/assets/image-object-detection-fridge-items/"
+                            + "validation-mltable-folder"
+                        ),
+                        "type": AssetTypes.MLTABLE,
+                        "version": "1",
+                    },
+                ],
+            ),
+            # image instance segmentation
+            (
+                "automl/components/automl_image_instance_segmentation/spec.yaml",
+                "automl/tests/test_configs/payload/image_instance_segmentation_fridge_items_payload.json",
+                [
+                    {
+                        "name": "image_instance_segmentation_training_data",
+                        "path": (
+                            "./automl/tests/test_configs/assets/image-instance-segmentation-fridge-items/"
+                            + "training-mltable-folder"
+                        ),
+                        "type": AssetTypes.MLTABLE,
+                        "version": "1",
+                    },
+                    {
+                        "name": "image_instance_segmentation_validation_data",
+                        "path": (
+                            "./automl/tests/test_configs/assets/image-instance-segmentation-fridge-items/"
+                            + "validation-mltable-folder"
+                        ),
+                        "type": AssetTypes.MLTABLE,
+                        "version": "1",
+                    },
+                ],
+            ),
         ],
     )
     def test_automl_components(
