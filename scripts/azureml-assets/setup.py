@@ -15,6 +15,7 @@ setup(
       "GitPython>=3.1",
       "pyyaml>=5",
       "pip>=21",
+      "azure-ai-ml",
    ],
    python_requires=">=3.8,<4.0",
 )
