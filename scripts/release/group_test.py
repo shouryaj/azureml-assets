@@ -4,7 +4,6 @@
 import argparse
 import concurrent.futures
 import os
-import psutil
 import sys
 import yaml
 
@@ -21,7 +20,9 @@ TEST_YML = "tests.yml"
 
 def run_pytest_job(job: Path, my_env: dict):
     """Run single pytest job."""
-    p = run(f"pytest {job} -n logical --log-cli-level=info --show-capture=stderr", env=my_env, shell=True)
+    num_cores = 4
+    logger.print(f"running pytest with disribution level: {num_cores}")
+    p = run(f"pytest {job} -n {num_cores} --log-cli-level=info --show-capture=stderr", env=my_env, shell=True)
     return p.returncode
 
 
