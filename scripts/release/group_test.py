@@ -22,7 +22,7 @@ def run_pytest_job(job: Path, my_env: dict):
     """Run single pytest job."""
     NUM_THREADS = 8
     logger.print(f"Running pytest with disribution level: {NUM_THREADS}")
-    p = run(f"pytest {job} -n {NUM_THREADS} --log-cli-level=info --show-capture=stderr", env=my_env, shell=True)
+    p = run(f"pytest {job} -n {NUM_THREADS} --log-cli-level=info --show-capture=all", env=my_env, shell=True)
     return p.returncode
 
 
@@ -83,7 +83,7 @@ if __name__ == "__main__":
     my_env['subscription_id'] = subscription_id
     my_env['resource_group'] = resource_group
     my_env['workspace'] = workspace
-    if my_env['token']:
+    if my_env.get('token'):
         logger.print("token is set")
     if args.version_suffix:
         my_env['version_suffix'] = args.version_suffix
@@ -156,7 +156,6 @@ if __name__ == "__main__":
                 cover_yaml.extend(covered_assets)
             with open(coverage_report, "w") as yf:
                 yaml.safe_dump(cover_yaml, yf)
-
 
     if failed_jobs:
         logger.log_warning(f"{len(failed_jobs)} jobs failed. {failed_jobs}.")
