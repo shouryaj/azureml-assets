@@ -3,7 +3,6 @@
 
 """Image Instance Segmentation preprocessing."""
 
-
 import json
 import logging
 import numpy as np
@@ -58,8 +57,8 @@ def _convert_mask_to_polygon(
         dtype=np.uint8,
     )
     embedded_mask[
-        edge_safety_padding : image_shape[0] + edge_safety_padding,
-        edge_safety_padding : image_shape[1] + edge_safety_padding,
+        edge_safety_padding: image_shape[0] + edge_safety_padding,
+        edge_safety_padding: image_shape[1] + edge_safety_padding,
     ] = mask_array
 
     # Find Image Contours
@@ -189,12 +188,11 @@ def _create_jsonl_files(data_dir, uri_folder_data_path, src_images):
 
 
 def prepare_data(mlclient: MLClient):
-    """Prepare image OD data.
+    """Prepare Image Instance Segmentation data.
 
     :param mlclient: mlclient object to upload and register datasets
     :type mlclient: MLClient
     """
-
     data_dir = os.path.join(os.getcwd(), "automl/tests/test_configs/assets/image-instance-segmentation-fridge-items")
     instance_segmentation_fridge_items_url = (
         "https://cvbp-secondary.z19.web.core.windows.net/datasets/object_detection/odFridgeObjectsMask.zip"
