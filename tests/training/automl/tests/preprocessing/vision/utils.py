@@ -29,8 +29,7 @@ def _download_and_register_image_data(mlclient: MLClient, download_url: str, tar
     my_data = Data(
         name=asset_name,
         path=os.path.join(target_directory, asset_name),
-        type=AssetTypes.URI_FOLDER,
-        version="0.0.1"
+        type=AssetTypes.URI_FOLDER
     )
     uri_folder_data_asset = mlclient.data.create_or_update(my_data)
     return os.path.join(target_directory, asset_name), uri_folder_data_asset.path
